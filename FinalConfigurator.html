@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuratore Certificati</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styleSetUp.css" />
+</head>
+
+<body>
+  <div class="parent">
+    <div class="dropdown-personal">
+      <select id="languageSelect">
+        <option value="en">english</option>
+        <option value="it">italiano</option>
+        <option value="es">español</option>
+      </select>
+    </div>
+    <div id="flag">
+      <!-- <img src="" alt="bandiere"> -->
+    </div>
+    <div class="breadcrumbs">
+      <button id="setUpPageNode" class="active progressBarNode"><svg xmlns="http://www.w3.org/2000/svg" width="35"
+          height="35" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+          <path
+            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+        </svg></button>
+      <button id="durationPageNode" class="progressBarNode" disabled><svg xmlns="http://www.w3.org/2000/svg"
+          style="pointer-events: none;" width="32" height="32" fill="currentColor" class="bi bi-calendar2-date-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M9.402 10.246c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2" />
+          <path
+            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5m9.954 3H2.545c-.3 0-.545.224-.545.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5m-4.118 9.79c1.258 0 2-1.067 2-2.872 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684c.047.64.594 1.406 1.703 1.406zm-2.89-5.435h-.633A13 13 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675V7.354z" />
+        </svg></button>
+      <button id="classNumberPageNode" class="progressBarNode" disabled><svg xmlns="http://www.w3.org/2000/svg"
+          style="pointer-events: none;" width="32" height="32" fill="currentColor" class="bi bi-file-earmark-text-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1z" />
+        </svg>
+      </button>
+      <button id="formPageNode" class="progressBarNode" disabled><svg xmlns="http://www.w3.org/2000/svg" width="32"
+          height="32" fill="currentColor" style="pointer-events: none;" class="bi bi-file-earmark-check-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+        </svg></button>
+    </div>
+    <!-- <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+    <button class="carousel-arrow next" aria-label="Next card">›</button> -->
+
+    <!-- LANGUAGE PAGE EN -->
+    <div id="en-page" class="d-none">
+      <div class="container-personal">
+        <!-- QUESTION SET-UP EN -->
+        <div id="setUp-En" class="d-none">
+          <h1 class="title-personal">Choose your Set-Up</h1>
+          <!-- CARD CONTAINER EN -->
+          <div class="cards">
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="card" data-option="base bases base" data-suboption="1000">
+              <h2>Manual certificate registration.</h2>
+              <p>Ideal for individual users or small teams. All certificates are registered manually through our
+                platform,
+                without API integration.</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="card" data-option="advanced avanzatos avanzato" data-suboption="6000">
+              <h2>Automated certificate registration via API.</h2>
+              <p>Designed for organizations with their own IT systems. Integrate with our service through the KeCert API
+                for
+                seamless and scalable blockchain certificate issuance.</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+        <!-- DURATION EN -->
+        <div id="duration-En" class="d-none">
+          <h1 class="title-personal">Choose the duration</h1>
+          <!-- CARD CONTAINER EN -->
+          <div class="cards">
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="card" data-option="with-expiry con-scadenzas con-scadenza">
+              <h2>Certificates with expiry date.</h2>
+              <p>These certificates have a validity period and can be viewed on our platform for up to 10 years after
+                issuance.</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="card" data-option="without-expiry senza-scadenzas senza-scadenza">
+              <h2>Certificates without expiry date.</h2>
+              <p>These certificates are permanent and can be accessed and verified on our platform for up to 100 years.
+              </p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="class-card" data-option="none">
+              <h2>None of the options suit you?</h2>
+              <p>Go directly to the contact form and explain your needs in the description</p>
+              <div class="btn-wrapper-alt mt-auto d-flex flex-column align-items-center gap-2 mb-5">
+                <button type="button" class="button btn skip">skip</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+
+        <!-- NUMBER OF CLASSES EN -->
+        <div id="classNumber-En" class="d-none">
+          <h1 class="title-personal">Choose your package</h1>
+          <!-- CARD CONTAINER EN -->
+          <div class="cards">
+            <!-- Card 1: Single class -->
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="class-card" data-option="single singolas singola">
+              <h2>Single class – up to 1000 students</h2>
+              <p>Perfect for individual events or school classes. Issue certificates manually or via API for up to 1000
+                students in one go.</p>
+              <div class="btn-wrapper-alt mt-auto d-flex flex-column align-items-center gap-2 mb-5">
+                <button type="button" class="button btn btn-student" data-suboption="1000">1000</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- Card 2: 10-class package -->
+            <div class="class-card" data-option="package-10 pacchettos-10 pacchetto-10">
+              <h2>10-Class Package</h2>
+              <p>Issue certificates in 10 separate emissions. Choose whether each class contains one student or up to 30
+                students.</p>
+              <div class="btn-wrapper mt-auto d-flex flex-row justify-content-center gap-2 mb-5">
+                <button type="button" class="button btn btn-student" data-suboption="1">1</button>
+                <button type="button" class="button btn btn-student" data-suboption="30">30</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- Card 3: 50-class package -->
+            <div class="class-card" data-option="package-50 pacchettos-50 pacchetto-50">
+              <h2>50-Class Package</h2>
+              <p>Perfect for larger institutions. Choose whether each class contains one student or up to 30 students
+                per
+                emission.</p>
+              <div class="btn-wrapper mt-auto d-flex flex-row justify-content-center gap-2 mb-5">
+                <button type="button" class="button btn btn-student" data-suboption="1">1</button>
+                <button type="button" class="button btn btn-student" data-suboption="30">30</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- Card 4: None of the Option -->
+            <div class="class-card" data-option="none">
+              <h2>None of the options suit you?</h2>
+              <p>Go directly to the contact form and explain your needs in the description</p>
+              <div class="btn-wrapper-alt mt-auto d-flex flex-column align-items-center gap-2 mb-5">
+                <button type="button" class="button btn skip">skip</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+        <!-- CONFIGURATOR FORM PAGE EN -->
+        <div id="form-En" class="d-none">
+          <h1 class="title-personal">Finalize your choice</h1>
+          <div class="cards">
+            <!-- FINAL CARD -->
+            <!-- da cambiare in form card -->
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="card summary-card" data-option="none">
+              <h2>Summary</h2>
+              <ul id="summaryListEn"></ul>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- FORM -->
+            <!-- da cambiare in form card -->
+            <div class="card form-card" data-option="none">
+              <form id="finalForm" class="form-personal">
+                <label for="userName">Name</label><br>
+                <input type="text" id="userName" name="userName" required><br>
+                <label for="userEmail">Email</label><br>
+                <input type="email" id="userEmail" name="userEmail" required><br>
+                <label for="userDescription">Description</label><br>
+                <textarea id="userDescription" name="userDescription" rows="4" required></textarea>
+              </form>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+        <!-- ALT FORM -->
+        <div id="form-alt-En" class="d-none">
+          <h1 class="title-personal">Explain your needs</h1>
+          <div class="cards">
+            <!-- FINAL CARD -->
+            <!-- da cambiare in form card -->
+            <!-- FORM -->
+            <!-- da cambiare in form card -->
+            <div class="card form-card" data-option="none">
+              <form id="finalForm" class="form-personal">
+                <label for="userName">Name</label><br>
+                <input type="text" id="userName" name="userName" required><br>
+                <label for="userEmail">Email</label><br>
+                <input type="email" id="userEmail" name="userEmail" required><br>
+                <label for="userDescription">Description</label><br>
+                <textarea id="userDescription" name="userDescription" rows="4" required></textarea>
+              </form>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- LANGUAGE PAGE ES -->
+    <div id="es-page" class="d-none">
+      <div class="container-personal">
+        <!-- QUESTION SET-UP ES -->
+        <div id="setUp-Es" class="d-none">
+          <h1 class="title-personal">Elige la configuración</h1>
+          <!-- CARD CONTAINER ES -->
+          <div class="cards">
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="card" data-option="base bases base" data-suboption="1000">
+              <h2>Registro manual de certificados</h2>
+              <p>Ideal para usuarios individuales o pequeños equipos. Todos los certificados se registran manualmente a
+                través de nuestra plataforma, sin integración de API.</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="card" data-option="advanced avanzatos avanzato" data-suboption="6000">
+              <h2>Registro automatizado de certificados vía API</h2>
+              <p>Diseñado para organizaciones con sistemas informáticos propios. Integra nuestro servicio a través de la
+                API KeCert para emitir certificados blockchain de forma ágil y escalable.</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+        <!-- DURATION Es -->
+        <div id="duration-Es" class="d-none">
+          <h1 class="title-personal">Elige la duración</h1>
+          <!-- CARD CONTAINER Es -->
+          <div class="cards">
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="card" data-option="with-expiry con-scadenzas con-scadenza">
+              <h2>Certificados con fecha de caducidad</h2>
+              <p>Estos certificados tienen un periodo de validez y pueden verse en nuestra plataforma hasta 10 años
+                después de su emisión.</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="card" data-option="without-expiry senza-scadenzas senza-scadenza">
+              <h2>Certificados sin fecha de caducidad</h2>
+              <p>Estos certificados son permanentes y pueden accederse y verificarse en nuestra plataforma hasta 100
+                años!</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="class-card" data-option="none">
+              <h2>¿Ninguna de las opciones te satisface?</h2>
+              <p>Ve directamente al formulario de contacto y explícamos tus necesidades en la descripción</p>
+              <div class="btn-wrapper-alt mt-auto d-flex flex-column align-items-center gap-2 mb-5">
+                <button type="button" class="button btn skip">Saltar</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+
+        <!-- NUMBER OF CLASSES Es -->
+        <div id="classNumber-Es" class="d-none">
+          <h1 class="title-personal">Elige el paquete</h1>
+          <!-- CARD CONTAINER Es -->
+          <div class="cards">
+            <!-- Card 1: Single class -->
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="class-card" data-option="single singolas singola">
+              <h2>Clase única hasta 1000 estudiantes</h2>
+              <p>Perfecto para eventos individuales o clases escolares. Emite certificados manualmente o vía API para
+                hasta 1000 estudiantes de una sola vez.</p>
+              <div class="btn-wrapper-alt mt-auto d-flex flex-row justify-content-center gap-2 mb-5">
+                <button type="button" class="button btn btn-student" data-suboption="1000">1000</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- Card 2: 10-class package -->
+            <div class="class-card" data-option="package-10 pacchettos-10 pacchetto-10">
+              <h2>Paquete de 10 clases</h2>
+              <p>Emite certificados en 10 emisiones separadas. Elige si cada clase contiene un estudiante o hasta 30
+                estudiantes.</p>
+              <div class="btn-wrapper mt-auto d-flex flex-row justify-content-center gap-2 mb-5">
+                <button type="button" class="button btn btn-student" data-suboption="1">1</button>
+                <button type="button" class="button btn btn-student" data-suboption="30">30</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- Card 3: 50-class package -->
+            <div class="class-card" data-option="package-50 pacchettos-50 pacchetto-50">
+              <h2>Paquete de 50 clases</h2>
+              <p>Perfecto para instituciones de mayor tamaño. Elige si cada clase contiene un estudiante o hasta 30
+                estudiantes por emisión.</p>
+              <div class="btn-wrapper mt-auto d-flex flex-row justify-content-center gap-2 mb-5">
+                <button type="button" class="button btn btn-student" data-suboption="1">1</button>
+                <button type="button" class="button btn btn-student" data-suboption="30">30</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="class-card" data-option="none">
+              <h2>¿Ninguna de las opciones te satisface?</h2>
+              <p>Ve directamente al formulario de contacto y explícamos tus necesidades en la descripción</p>
+              <div class="btn-wrapper-alt mt-auto d-flex flex-column align-items-center gap-2 mb-5">
+                <button type="button" class="button btn skip">Saltar</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+        <!-- CONFIGURATOR FORM PAGE Es -->
+        <div id="form-Es" class="d-none">
+          <h1 class="title-personal">Resumen de elecciones</h1>
+          <div class="cards">
+            <!-- FINAL CARD -->
+            <!-- da cambiare in form card -->
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="card summary-card" data-option="none">
+              <h2>Resumen</h2>
+              <ul id="summaryListEs"></ul>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- FORM -->
+            <!-- da cambiare in form card -->
+            <div class="card form-card" data-option="none">
+              <form id="finalForm" class="form-personal">
+                <label for="userName">Nombre</label><br>
+                <input type="text" id="userName" name="userName" required><br>
+                <label for="userEmail">Email</label><br>
+                <input type="email" id="userEmail" name="userEmail" required><br>
+                <label for="userDescription">Descripción</label><br>
+                <textarea id="userDescription" name="userDescription" rows="4" required></textarea>
+              </form>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+        <!-- ALT FORM -->
+        <div id="form-alt-Es" class="d-none">
+          <h1 class="title-personal">Explícanos tus necesidades</h1>
+          <div class="cards">
+            <!-- FINAL CARD -->
+            <!-- da cambiare in form card -->
+            <!-- FORM -->
+            <!-- da cambiare in form card -->
+            <div class="card form-card" data-option="none">
+              <form id="finalForm" class="form-personal">
+                <label for="userName">Nombre</label><br>
+                <input type="text" id="userName" name="userName" required><br>
+                <label for="userEmail">Email</label><br>
+                <input type="email" id="userEmail" name="userEmail" required><br>
+                <label for="userDescription">Descripción</label><br>
+                <textarea id="userDescription" name="userDescription" rows="4" required></textarea>
+              </form>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- LANGUAGE PAGE it -->
+    <div id="it-page" class="d-none">
+      <div class="container-personal">
+        <!-- QUESTION SET-UP it -->
+        <div id="setUp-It" class="d-none">
+          <h1 class="title-personal">Scegli il set-up</h1>
+          <!-- CARD CONTAINER it -->
+          <div class="cards">
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="card" data-option="base bases base" data-suboption="1000">
+              <h2>Registrazione manuale dei certificati</h2>
+              <p>Ideale per utenti individuali o piccoli team. Tutti i certificati vengono registrati manualmente
+                tramite la nostra piattaforma, senza integrazione API.</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="card" data-option="advanced avanzatos avanzato" data-suboption="6000">
+              <h2>Registrazione automatizzata dei certificati tramite API</h2>
+              <p>Pensato per organizzazioni con sistemi IT proprietari. Integra il nostro servizio tramite l’API KeCert
+                per l’emissione di certificati blockchain in modo fluido e scalabile.</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+        <!-- DURATION It -->
+        <div id="duration-It" class="d-none">
+          <h1 class="title-personal">Scegli la durata</h1>
+          <!-- CARD CONTAINER It -->
+          <div class="cards">
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="card" data-option="with-expiry con-scadenzas con-scadenza">
+              <h2>Certificati con data di scadenza</h2>
+              <p>Questi certificati hanno un periodo di validità e possono essere visualizzati sulla nostra piattaforma
+                fino a 10 anni dopo il rilascio.</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="card" data-option="without-expiry senza-scadenzas senza-scadenza">
+              <h2>Certificati senza data di scadenza</h2>
+              <p>Questi certificati sono permanenti e possono essere consultati e verificati sulla nostra piattaforma
+                fino a 100 anni!</p>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="class-card" data-option="none">
+              <h2>Nessuna delle opzioni ti soddisfa?</h2>
+              <p>Vai direttamente al form di contatto e nella descrizione spiegaci le tue necessità</p>
+              <div class="btn-wrapper-alt mt-auto d-flex flex-column align-items-center gap-2 mb-5">
+                <button type="button" class="button btn skip">salta</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+
+        <!-- NUMBER OF CLASSES It -->
+        <div id="classNumber-It" class="d-none">
+          <h1 class="title-personal">Scegli il pacchetto</h1>
+          <!-- CARD CONTAINER It -->
+          <div class="cards">
+            <!-- Card 1: Single class -->
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="class-card" data-option="single singolas singola">
+              <h2>Classe singola fino a 1000 studenti</h2>
+              <p>Perfetto per eventi individuali o classi scolastiche. Emetti certificati manualmente o tramite API per
+                un massimo di 1000 studenti in un’unica soluzione.</p>
+              <div class="btn-wrapper-alt mt-auto d-flex flex-column align-items-center gap-2 mb-5">
+                <button type="button" class="button btn btn-student" data-suboption="1000">1000</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- Card 2: 10-class package -->
+            <div class="class-card" data-option="package-10 pacchettos-10 pacchetto-10">
+              <h2>Pacchetto da 10 classi</h2>
+              <p>Emetti certificati in 10 emissioni separate. Scegli se ogni emissione include un singolo studente o
+                fino a 30 studenti.</p>
+
+              <div class="btn-wrapper mt-auto d-flex flex-row justify-content-center gap-2 mb-5">
+                <button type="button" class="button btn btn-student" data-suboption="1">1</button>
+                <button type="button" class="button btn btn-student" data-suboption="30">30</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- Card 3: 50-class package -->
+            <div class="class-card" data-option="package-50 pacchettos-50 pacchetto-50">
+              <h2>Pacchetto da 50 classi</h2>
+              <p>Perfetto per istituzioni di grandi dimensioni. Scegli se ogni emissione include un singolo studente o
+                fino a 30 studenti.</p>
+              <div class="btn-wrapper mt-auto d-flex flex-row justify-content-center gap-2 mb-5">
+                <button type="button" class="button btn btn-student" data-suboption="1">1</button>
+                <button type="button" class="button btn btn-student" data-suboption="30">30</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <div class="class-card" data-option="none">
+              <h2>Nessuna delle opzioni ti soddisfa?</h2>
+              <p>Vai direttamente al form di contatto e nella descrizione spiegaci le tue necessità</p>
+              <div class="btn-wrapper-alt mt-auto d-flex flex-column align-items-center gap-2 mb-5">
+                <button type="button" class="button btn skip">salta</button>
+              </div>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+        <!-- CONFIGURATOR FORM PAGE It -->
+        <div id="form-It" class="d-none">
+          <h1 class="title-personal">Riepilogo delle scelte</h1>
+          <div class="cards">
+            <!-- FINAL CARD -->
+            <!-- da cambiare in form card -->
+            <button class="carousel-arrow prev" aria-label="Previous card">‹</button>
+            <div class="card summary-card" data-option="none">
+              <h2>Riepilogo</h2>
+              <ul id="summaryListIt"></ul>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <!-- FORM -->
+            <!-- da cambiare in form card -->
+            <div class="card form-card" data-option="none">
+              <form id="finalForm" class="form-personal">
+                <label for="userName">Nome</label><br>
+                <input type="text" id="userName" name="userName" required><br>
+                <label for="userEmail">Email</label><br>
+                <input type="email" id="userEmail" name="userEmail" required><br>
+                <label for="userDescription">Descrizione</label><br>
+                <textarea id="userDescription" name="userDescription" rows="4" required></textarea>
+              </form>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+            <button class="carousel-arrow next" aria-label="Next card">›</button>
+          </div>
+        </div>
+        <!-- ALT FORM -->
+        <div id="form-alt-It" class="d-none">
+          <h1 class="title-personal">Speigaci le tue necessità</h1>
+          <div class="cards">
+            <!-- FINAL CARD -->
+            <!-- da cambiare in form card -->
+            <!-- FORM -->
+            <!-- da cambiare in form card -->
+            <div class="card form-card" data-option="none">
+              <form id="finalForm" class="form-personal">
+                <label for="userName">Nome</label><br>
+                <input type="text" id="userName" name="userName" required><br>
+                <label for="userEmail">Email</label><br>
+                <input type="email" id="userEmail" name="userEmail" required><br>
+                <label for="userDescription">Descrizione</label><br>
+                <textarea id="userDescription" name="userDescription" rows="4" required></textarea>
+              </form>
+              <div class="badge">
+                <span>🗸</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="next-btn-container">
+      <button id="nextBtn" class="button next-btn" disabled>Next</button>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+    </script>
+  <!-- <script src="../../public/scripts/configurator.js"></script> -->
+  <script src="../../public/scripts/FinalConfigurator.js"></script>
+</body>
+
+</html>
