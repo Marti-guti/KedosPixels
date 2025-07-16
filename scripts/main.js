@@ -3,8 +3,8 @@ let buttons = document.querySelectorAll(".goToConfigurator");
 buttons.forEach(btn => {
 btn.addEventListener("click", () => {
     let value = btn.id;
-    window.location.href = "public/FinalConfigurator.html?lang=" + value;
-    
+    window.location.href = "FinalConfigurator.html?lang=" + value;
+
 })
 });
 
