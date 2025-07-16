@@ -60,7 +60,7 @@ const pages = {
 
 function showFlag() {
   languageSelect.value = currentLang;
-  flagDiv.style.backgroundImage = 'url("../../public/img/' + currentLang + '.png")';
+  flagDiv.style.backgroundImage = 'url("public/img/' + currentLang + '.png")';
 }
 
 function updateNextButtonText() {
